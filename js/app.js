@@ -16,14 +16,18 @@ let voices =[]
 
 const getVoices = () => {
   voices = synth.getVoices();
-  //this is called asynchronously so we need to wait for onvoiceschanged event is fired when it is loaded. To get around this we set the voice from the callback for that event listener
+  //this is called asynchronously so we need to wait for onvoiceschanged event is fired when it is loaded. To get around this we set the voice from the callback for that event listener. This is addressed by the if statement below.
   console.log(voices);
   // reaches into the API and it has a method getvoices
-  //
+
+
+
+  //Loop through voices and create option for each one
+
+
 };
 
 getVoices();
-
 if(synth.onvoiceschanged !== undefined){
   synth.onvoiceschanged = getVoices;
 }
